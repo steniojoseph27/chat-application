@@ -1,6 +1,5 @@
 @model Chat
-@section Scripts {
-
+@*@section Scripts {
     <script src="~/client/polyfills.js"></script>
     <script src="~/client/runtime.js"></script>
     <script src="~/client/main.js" asp-append-version="true"></script>
@@ -9,11 +8,12 @@
 <chat-app></chat-app>
 @section head {
     <link href="~/client/styles.css" rel="stylesheet" />
-}
-@*<div class="chat-body">
+}*@
+
+<div class="chat-body">
         @if (Model != null)
         {
-            @foreach (var message in Model.Messages)
+            @foreach (var message in Model.Messages.OrderByDescending(d => d.Timestamp).Take(30))
             {
                 <div class="message">
                     <header>@message.Name:</header>
@@ -82,4 +82,4 @@
                 </script>
                 }
         }
-    </div>*@  
+</div>  

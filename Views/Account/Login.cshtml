@@ -4,8 +4,8 @@
         <form asp-controller="Account" asp-action="Login">
             <div asp-validation-summary="ModelOnly"></div>
             <div class="form-group">
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
                 <button type="submit">Submit</button>
             </div>
             <div class="form-group">
