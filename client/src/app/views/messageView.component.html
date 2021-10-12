@@ -1,0 +1,9 @@
+﻿<div class="row">
+    <div class="message" *ngFor="let m of chat.messages">
+        <header>{{ m.name }}:</header>
+        <p>{{ m.text }}</p>
+        <footer>{{ m.date | date:'yyyy-MM-dd h:mm:ss a' }}</footer>
+    </div>
+</div>
+
+
